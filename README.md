@@ -1,3 +1,5 @@
+# This is just so I can clone more easily
+
 ## ByNameModding
 #### English | [Русский](https://github.com/ByNameModding/BNM-Android/blob/master/README_RU.md)
 ByNameModding is a library for modding of il2cpp games by classes, methods, field names. It includes everything you need for Android Unity games modding.<br>
