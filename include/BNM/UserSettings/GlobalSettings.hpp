@@ -121,18 +121,17 @@ inline void Unhook(PTR_T ptr) {
 
 
 // Dobby
-/*
-#include <dobby.h>
+#include "../../../Dobby/include/dobby.h"
 
 template<typename PTR_T, typename NEW_T, typename T_OLD>
 inline void *BasicHook(PTR_T ptr, NEW_T newMethod, T_OLD &oldBytes) {
-    if ((void *) ptr != nullptr) DobbyHook((void *)ptr, (void *) newMethod, (void **) &oldBytes);
+    if ((void *) ptr != nullptr) DobbyHook((void *)ptr, reinterpret_cast<dobby_dummy_func_t>(newMethod), reinterpret_cast<dobby_dummy_func_t *>(&oldBytes));
     return (void *) ptr;
 }
 
 template<typename PTR_T, typename NEW_T, typename T_OLD>
 inline void *BasicHook(PTR_T ptr, NEW_T newMethod, T_OLD &&oldBytes) {
-    if ((void *) ptr != nullptr) DobbyHook((void *)ptr, (void *) newMethod, (void **) &oldBytes);
+    if ((void *) ptr != nullptr) DobbyHook((void *)ptr, reinterpret_cast<dobby_dummy_func_t>(newMethod), reinterpret_cast<dobby_dummy_func_t *>(&oldBytes));
     return (void *) ptr;
 }
 
@@ -140,9 +139,9 @@ template<typename PTR_T>
 inline void Unhook(PTR_T ptr) {
     if ((void *) ptr != nullptr) DobbyDestroy((void *)ptr);
 }
-*/
 
 // Dummy
+/*
 #include <cassert>
 
 template<typename PTR_T, typename NEW_T, typename T_OLD>
@@ -163,7 +162,7 @@ template<typename PTR_T>
 inline void Unhook(PTR_T ptr) {
     assert("Нет ПО для подмены! (No hooking software!)");
     if ((void *) ptr != nullptr) ((void)0);
-}
+}*/
 
 #include <dlfcn.h>
 
